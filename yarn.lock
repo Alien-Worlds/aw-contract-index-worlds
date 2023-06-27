@@ -2,67 +2,39 @@
 # yarn lockfile v1
 
 
-"@alien-worlds/api-core@^0.0.138":
-  version "0.0.138"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/api-core/0.0.138/4cb2b844e6e8e3f2aabd52d6833e224543553300#4cb2b844e6e8e3f2aabd52d6833e224543553300"
-  integrity sha512-5NZ//JB/7vgh33pjcpfOlrSZid0CaZzZnThWbIo4WEHYGi+5kodbvD76SLOpLjS0PG9891bqKaVxYG7ZpPLy6g==
+"@alien-worlds/api-core@^0.0.151":
+  version "0.0.151"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/api-core/0.0.151/90f3fda4958c18a705ee34300f47a46f8a3e4f63#90f3fda4958c18a705ee34300f47a46f8a3e4f63"
+  integrity sha512-EkQjZ34F3srCD97b0TE+Lju05pod5gxPlUnezMV9Bq0R1xp0XLGnbSIqpO6Y2UfIJY7PHpFaHWpce+q2rQs4aA==
   dependencies:
     inversify "^6.0.1"
     nanoid "^3.0.0"
     node-fetch "2"
     reflect-metadata "^0.1.13"
 
-"@alien-worlds/api-core@^0.0.147":
-  version "0.0.147"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/api-core/0.0.147/c0ca8ca537112fbecbbc8ac3f3029e12af4a54d4#c0ca8ca537112fbecbbc8ac3f3029e12af4a54d4"
-  integrity sha512-VYAZHOeX/rCUjnYLHHH5sL8BN2CCL8xVN+3SIUVmU2idwmU6IOAXE6QSn1UN/rTkl82d6gbiRxdi+yahfSANuQ==
+"@alien-worlds/eos@^0.0.16":
+  version "0.0.16"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/eos/0.0.16/2857c94491496a938086fc307116bfbff45a9902#2857c94491496a938086fc307116bfbff45a9902"
+  integrity sha512-Zkgeo4rNidiQiBLVx54XdYajDn6kjQ2RO72Nw20aQ5lPkCdpX4YPILSIzmRD2qGRijSsvTjfL8369tfs7wHKmA==
   dependencies:
-    inversify "^6.0.1"
-    nanoid "^3.0.0"
-    node-fetch "2"
-    reflect-metadata "^0.1.13"
-
-"@alien-worlds/api-core@^0.0.149":
-  version "0.0.149"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/api-core/0.0.149/2dfd786f1bdc71df887edfe1f0220098378a4699#2dfd786f1bdc71df887edfe1f0220098378a4699"
-  integrity sha512-BUy43wd9LealXTwGI6ao4g8qtsyC67YnGviaWFvtEehhAEoSp6ayhwx09LCvTZirqJw6xtyfw+j1yyxgnwQ+iQ==
-  dependencies:
-    inversify "^6.0.1"
-    nanoid "^3.0.0"
-    node-fetch "2"
-    reflect-metadata "^0.1.13"
-
-"@alien-worlds/eos@^0.0.12":
-  version "0.0.12"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/eos/0.0.12/faf936ba3a79de59ba7fc52f26c20a1de0466a96#faf936ba3a79de59ba7fc52f26c20a1de0466a96"
-  integrity sha512-HegnIN8ypyTZy/sBtIUTY5scC+Fhvi5qjyuhaskv4ZBMXLzq3ozGEimsnMuzwY1NmcbdsOqJtIdTtIm2FuRKIA==
-  dependencies:
-    "@alien-worlds/api-core" "^0.0.147"
+    "@alien-worlds/api-core" "^0.0.151"
     eosjs "^22.1.0"
 
-"@alien-worlds/eosio-contract-types@^1.0.10":
-  version "1.0.10"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/eosio-contract-types/1.0.10/819094ad7cdd54f14dd186cea73d949017d5af4a#819094ad7cdd54f14dd186cea73d949017d5af4a"
-  integrity sha512-4kfjUdLlcP/gP5KXCOryl1n7/fKxwUWsUUfpiWTGsEO/YV5aia3bkFavynyAU9dpnLzndAO8WjIOta1n9rJURA==
+"@alien-worlds/eosio-contract-types@^1.0.11":
+  version "1.0.11"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/eosio-contract-types/1.0.11/91544309aa8d82259d125993942bea4127e3f362#91544309aa8d82259d125993942bea4127e3f362"
+  integrity sha512-Gf1ibmrJ1bYqtSoyY+gLIsf2cMAWjGMLfT29DaLcxRx846K8C5Lmdm32b4tBnfBqSaFuMYs0Pzmc5DqwnSjPTw==
   dependencies:
-    "@alien-worlds/api-core" "^0.0.138"
-    "@alien-worlds/storage-mongodb" "^0.0.14"
+    "@alien-worlds/api-core" "^0.0.151"
+    "@alien-worlds/storage-mongodb" "^0.0.22"
     typescript "^4.9.5"
 
-"@alien-worlds/storage-mongodb@^0.0.14":
-  version "0.0.14"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/storage-mongodb/0.0.14/a16846339c1fb7c2886592c96e5b6f735240f46e#a16846339c1fb7c2886592c96e5b6f735240f46e"
-  integrity sha512-hTYZOe5gwz2Yk8IOQbwt+LMp+ksFaCNo8uP8se2vubenv6vMlsCVuz8C+Cbl37Xo0XB7EOiB2MPI55+d1bcO5w==
+"@alien-worlds/storage-mongodb@^0.0.22":
+  version "0.0.22"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/storage-mongodb/0.0.22/d9bc5540f82a16abbfa64ebec22a1732f60b3f35#d9bc5540f82a16abbfa64ebec22a1732f60b3f35"
+  integrity sha512-5bwxRLohvizPuLJXgppzGF7dfDmEQtLHFJCGM+l6CHQ4OOnd4kleO/15379wpI1QVxiYd0ZjGwbBw+JdSeKhQQ==
   dependencies:
-    "@alien-worlds/api-core" "^0.0.138"
-    mongodb "4.9.1"
-
-"@alien-worlds/storage-mongodb@^0.0.18":
-  version "0.0.18"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/storage-mongodb/0.0.18/8b762d164d9ca1ed3d47abd55c08f14eb60578d1#8b762d164d9ca1ed3d47abd55c08f14eb60578d1"
-  integrity sha512-aoiSO3ZIkBdP3SKabMWBY6d3WwMeca4syYD+m28LwHiUtuIWNB0AkaFL4vSHGhOTTgfx9gscdlEAf0MwyWV65w==
-  dependencies:
-    "@alien-worlds/api-core" "^0.0.147"
+    "@alien-worlds/api-core" "^0.0.151"
     mongodb "4.9.1"
 
 "@ampproject/remapping@^2.2.0":
