@@ -1,7 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 26 Jun 2023 14:33:41 GMT
+ * Last updated on: Thu, 29 Jun 2023 08:14:15 GMT
  */
+
+import { MongoDB } from '@alien-worlds/storage-mongodb';
 
 import { HdlegovchgMongoModel } from './hdlegovchg.dto';
 import { RegaccountMongoModel } from './regaccount.dto';
@@ -29,3 +31,19 @@ export type DataDocumentType =
   | UnregaccountMongoModel
   | UnregdacMongoModel
   | UnregrefMongoModel;
+
+export type IndexWorldsActionMongoModel = {
+  _id?: MongoDB.ObjectId;
+  block_timestamp?: Date;
+  block_number?: MongoDB.Long;
+  global_sequence?: MongoDB.Long;
+  receiver_sequence?: MongoDB.Long;
+  trx_id?: string;
+  action_hash?: string;
+  action?: {
+    account: string;
+    name: string;
+    data: DataDocumentType;
+  };
+};
+

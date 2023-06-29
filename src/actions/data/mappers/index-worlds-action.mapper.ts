@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 26 Jun 2023 14:33:41 GMT
+ * Last updated on: Thu, 29 Jun 2023 08:14:15 GMT
  */
 
 
@@ -39,7 +39,7 @@ import { UnregrefMongoMapper } from "./unregref.mapper";
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { DataEntityType } from '../../domain/entities/index-worlds-action';
 import { 
-  DataDocumentType,
+  IndexWorldsActionMongoModel,
   HdlegovchgMongoModel,
   RegaccountMongoModel,
   RegdacMongoModel,
@@ -185,18 +185,3 @@ export class IndexWorldsActionMongoMapper
     );
   }
 }
-
-export type IndexWorldsActionMongoModel = {
-  _id: MongoDB.ObjectId;
-  block_timestamp: Date;
-  block_number: MongoDB.Long;
-  global_sequence: MongoDB.Long;
-  receiver_sequence: MongoDB.Long;
-  trx_id: string;
-  action_hash: string;
-  action: {
-    account: string;
-    name: string;
-    data: DataDocumentType;
-  };
-};

@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 26 Jun 2023 14:33:41 GMT
+ * Last updated on: Thu, 29 Jun 2023 08:14:15 GMT
  */
 
 
@@ -12,7 +12,7 @@ import {
 import { ContractDelta, MapperImpl, parseToBigInt } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { DataEntityType } from '../../domain/entities/index-worlds-delta';
-import { DataDocumentType } from '../dtos';
+import { IndexWorldsDeltaMongoModel } from '../dtos';
 import { IndexWorldsTableName } from '../../domain/enums';
 import { DacglobalsMongoMapper } from "./dacglobals.mapper";
 import { DacsMongoMapper } from "./dacs.mapper";
@@ -96,17 +96,3 @@ export class IndexWorldsDeltaMongoMapper
     );
   }
 }
-
-export type IndexWorldsDeltaMongoModel = {
-  _id: MongoDB.ObjectId;
-  block_number: MongoDB.Long;
-  code: string;
-  scope: string;
-  table: string;
-  data_hash: string;
-  data: DataDocumentType;
-  payer: string;
-  primary_key: MongoDB.Long,
-  present: boolean;
-  block_timestamp: Date;
-};

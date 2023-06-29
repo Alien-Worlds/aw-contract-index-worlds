@@ -1,3 +1,8 @@
+/**
+ * Auto generated. DO NOT edit manually.
+ * Last updated on: Thu, 29 Jun 2023 08:14:15 GMT
+ */
+
 import { 
   DacglobalsRawModel,
   DacsRawModel,
@@ -39,9 +44,9 @@ export class IndexWorldsContractServiceImpl
    * @type {EosSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
-  public readonly fetchDacglobals = async (
+  public async fetchDacglobals (
     options?: GetTableRowsOptions
-  ): Promise<Result<DacglobalsRawModel[], Error>> => {
+  ): Promise<Result<DacglobalsRawModel[], Error>> {
     return await this.getAll<DacglobalsRawModel>('candidate_name', {
       ...options,
       code: 'index.worlds',
@@ -56,9 +61,9 @@ export class IndexWorldsContractServiceImpl
    * @type {EosSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
-  public readonly fetchDacs = async (
+  public async fetchDacs (
     options?: GetTableRowsOptions
-  ): Promise<Result<DacsRawModel[], Error>> => {
+  ): Promise<Result<DacsRawModel[], Error>> {
     return await this.getAll<DacsRawModel>('candidate_name', {
       ...options,
       code: 'index.worlds',
@@ -73,9 +78,9 @@ export class IndexWorldsContractServiceImpl
    * @type {EosSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
-  public readonly fetchNftcache = async (
+  public async fetchNftcache (
     options?: GetTableRowsOptions
-  ): Promise<Result<NftcacheRawModel[], Error>> => {
+  ): Promise<Result<NftcacheRawModel[], Error>> {
     return await this.getAll<NftcacheRawModel>('candidate_name', {
       ...options,
       code: 'index.worlds',

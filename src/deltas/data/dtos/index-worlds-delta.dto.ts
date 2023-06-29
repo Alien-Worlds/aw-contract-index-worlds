@@ -1,7 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 26 Jun 2023 14:33:41 GMT
+ * Last updated on: Thu, 29 Jun 2023 08:14:15 GMT
  */
+
+import { MongoDB } from '@alien-worlds/storage-mongodb';
 
 import { DacglobalsMongoModel } from './dacglobals.dto';
 import { DacsMongoModel } from './dacs.dto';
@@ -11,3 +13,18 @@ export type DataDocumentType =
   | DacglobalsMongoModel
   | DacsMongoModel
   | NftcacheMongoModel;
+
+
+export type IndexWorldsDeltaMongoModel = {
+  _id?: MongoDB.ObjectId;
+  block_number?: MongoDB.Long;
+  code?: string;
+  scope?: string;
+  table?: string;
+  data_hash?: string;
+  data?: DataDocumentType;
+  payer?: string;
+  primary_key?: MongoDB.Long,
+  present?: boolean;
+  block_timestamp?: Date;
+};
