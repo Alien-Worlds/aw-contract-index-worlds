@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 29 Jun 2023 08:50:20 GMT
+ * Last updated on: Tue, 04 Jul 2023 13:56:09 GMT
  */
 
 import { 
@@ -47,7 +47,7 @@ export class IndexWorldsContractServiceImpl
   public async fetchDacglobals (
     options?: GetTableRowsOptions
   ): Promise<Result<DacglobalsRawModel[], Error>> {
-    return await this.getAll<DacglobalsRawModel>('candidate_name', {
+    return await this.getAll<DacglobalsRawModel>('data', {
       ...options,
       code: 'index.worlds',
       table: 'dacglobals',
@@ -64,7 +64,7 @@ export class IndexWorldsContractServiceImpl
   public async fetchDacs (
     options?: GetTableRowsOptions
   ): Promise<Result<DacsRawModel[], Error>> {
-    return await this.getAll<DacsRawModel>('candidate_name', {
+    return await this.getAll<DacsRawModel>('owner', {
       ...options,
       code: 'index.worlds',
       table: 'dacs',
@@ -81,7 +81,7 @@ export class IndexWorldsContractServiceImpl
   public async fetchNftcache (
     options?: GetTableRowsOptions
   ): Promise<Result<NftcacheRawModel[], Error>> {
-    return await this.getAll<NftcacheRawModel>('candidate_name', {
+    return await this.getAll<NftcacheRawModel>('nft_id', {
       ...options,
       code: 'index.worlds',
       table: 'nftcache',
