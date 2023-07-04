@@ -20,10 +20,10 @@
     "@alien-worlds/api-core" "^0.0.151"
     eosjs "^22.1.0"
 
-"@alien-worlds/eosio-contract-types@^1.0.13":
-  version "1.0.13"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/eosio-contract-types/1.0.13/c26b8b53484c17f3489d2f20b6888ed1418302ec#c26b8b53484c17f3489d2f20b6888ed1418302ec"
-  integrity sha512-0fJEra6jhwBrs56Ergkinwu9MtK0r2FLBDqzapreTQMHvNF80GANwdHdQhV9pSKN029OE4mmOdwb+s5wMbRVFQ==
+"@alien-worlds/eosio-contract-types@^1.0.14":
+  version "1.0.14"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/eosio-contract-types/1.0.14/19343659b3680f2434332a58436e10032a726519#19343659b3680f2434332a58436e10032a726519"
+  integrity sha512-bfv5nmxmqvyznWHRy6CXCokfSehJNV+MWqCNXkJBqceKovxjML74H8zW/Y05Ft9TBKcFtT2xpvUPtQVWulP8jA==
   dependencies:
     "@alien-worlds/api-core" "^0.0.151"
     "@alien-worlds/storage-mongodb" "^0.0.22"
