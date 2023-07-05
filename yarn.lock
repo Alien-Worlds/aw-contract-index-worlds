@@ -12,12 +12,21 @@
     node-fetch "2"
     reflect-metadata "^0.1.13"
 
-"@alien-worlds/eos@^0.0.16":
-  version "0.0.16"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/eos/0.0.16/2857c94491496a938086fc307116bfbff45a9902#2857c94491496a938086fc307116bfbff45a9902"
-  integrity sha512-Zkgeo4rNidiQiBLVx54XdYajDn6kjQ2RO72Nw20aQ5lPkCdpX4YPILSIzmRD2qGRijSsvTjfL8369tfs7wHKmA==
+"@alien-worlds/api-core@^0.0.155":
+  version "0.0.155"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/api-core/0.0.155/33c08092422d3b41d3a6b215c06931d7eabd85bd#33c08092422d3b41d3a6b215c06931d7eabd85bd"
+  integrity sha512-pF0L5KDXzcaaYGNheIrgLg+y+GzINOOHxvxA9jGLyt7MrBr/adV0P016B9EK+BN9W2JVo+BCwsjAleji64mDPQ==
   dependencies:
-    "@alien-worlds/api-core" "^0.0.151"
+    inversify "^6.0.1"
+    node-fetch "2.6.6"
+    reflect-metadata "^0.1.13"
+
+"@alien-worlds/eos@^0.0.17":
+  version "0.0.17"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/eos/0.0.17/3239448ffefa2911efe25063d5a66f1e0f8273a8#3239448ffefa2911efe25063d5a66f1e0f8273a8"
+  integrity sha512-7zfEARthKjnWc5vBVtsJeJlXEjbe5OVS6C4gnOHFbpombu0GSkpz/sFbBDHJek3EG+m+mSKhbro1rb4NC5rngQ==
+  dependencies:
+    "@alien-worlds/api-core" "^0.0.155"
     eosjs "^22.1.0"
 
 "@alien-worlds/eosio-contract-types@^1.0.15":
@@ -35,6 +44,14 @@
   integrity sha512-5bwxRLohvizPuLJXgppzGF7dfDmEQtLHFJCGM+l6CHQ4OOnd4kleO/15379wpI1QVxiYd0ZjGwbBw+JdSeKhQQ==
   dependencies:
     "@alien-worlds/api-core" "^0.0.151"
+    mongodb "4.9.1"
+
+"@alien-worlds/storage-mongodb@^0.0.24":
+  version "0.0.24"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/storage-mongodb/0.0.24/a995fd2bbe9d36c7c12042b2af273e2242a96dd5#a995fd2bbe9d36c7c12042b2af273e2242a96dd5"
+  integrity sha512-i4M04mdQCHyuPLu4QAAEhPxz6c6lcFKSCszSLswojJdq6vzQsRkP1MGEqJP3hRl97IcWdEsGswvvkn02UDdYEw==
+  dependencies:
+    "@alien-worlds/api-core" "^0.0.155"
     mongodb "4.9.1"
 
 "@ampproject/remapping@^2.2.0":
@@ -2659,6 +2676,13 @@ node-fetch@2:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.11.tgz#cde7fc71deef3131ef80a738919f999e6edfff25"
   integrity sha512-4I6pdBY1EthSqDmJkiNk3JIT8cswwR9nfeW/cPdUagJYEQG7R95WRH74wpz7ma8Gh/9dI9FP+OU+0E4FvtA55w==
+  dependencies:
+    whatwg-url "^5.0.0"
+
+node-fetch@2.6.6:
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.6.tgz#1751a7c01834e8e1697758732e9efb6eeadfaf89"
+  integrity sha512-Z8/6vRlTUChSdIgMa51jxQ4lrw/Jy5SOW10ObaA47/RElsAN2c5Pn8bTgFGWn/ibwzXTE8qwr1Yzx28vsecXEA==
   dependencies:
     whatwg-url "^5.0.0"
 
