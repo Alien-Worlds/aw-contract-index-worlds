@@ -1,22 +1,22 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 06 Jul 2023 10:13:17 GMT
+ * Last updated on: Thu, 06 Jul 2023 15:42:04 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 
-import { HdlegovchgMongoModel } from './hdlegovchg.dto';
-import { RegaccountMongoModel } from './regaccount.dto';
-import { RegdacMongoModel } from './regdac.dto';
-import { RegrefMongoModel } from './regref.dto';
-import { SetownerMongoModel } from './setowner.dto';
-import { SetsociallnkMongoModel } from './setsociallnk.dto';
-import { SetsocialsMongoModel } from './setsocials.dto';
-import { SetstatusMongoModel } from './setstatus.dto';
-import { SettitleMongoModel } from './settitle.dto';
-import { UnregaccountMongoModel } from './unregaccount.dto';
-import { UnregdacMongoModel } from './unregdac.dto';
-import { UnregrefMongoModel } from './unregref.dto';
+import { HdlegovchgMongoModel, HdlegovchgRawModel } from './hdlegovchg.dto';
+import { RegaccountMongoModel, RegaccountRawModel } from './regaccount.dto';
+import { RegdacMongoModel, RegdacRawModel } from './regdac.dto';
+import { RegrefMongoModel, RegrefRawModel } from './regref.dto';
+import { SetownerMongoModel, SetownerRawModel } from './setowner.dto';
+import { SetsociallnkMongoModel, SetsociallnkRawModel } from './setsociallnk.dto';
+import { SetsocialsMongoModel, SetsocialsRawModel } from './setsocials.dto';
+import { SetstatusMongoModel, SetstatusRawModel } from './setstatus.dto';
+import { SettitleMongoModel, SettitleRawModel } from './settitle.dto';
+import { UnregaccountMongoModel, UnregaccountRawModel } from './unregaccount.dto';
+import { UnregdacMongoModel, UnregdacRawModel } from './unregdac.dto';
+import { UnregrefMongoModel, UnregrefRawModel } from './unregref.dto';
 
 export type DataDocumentType =
   | HdlegovchgMongoModel
@@ -32,6 +32,20 @@ export type DataDocumentType =
   | UnregdacMongoModel
   | UnregrefMongoModel;
 
+export type DataRawType =
+  | HdlegovchgRawModel
+  | RegaccountRawModel
+  | RegdacRawModel
+  | RegrefRawModel
+  | SetownerRawModel
+  | SetsociallnkRawModel
+  | SetsocialsRawModel
+  | SetstatusRawModel
+  | SettitleRawModel
+  | UnregaccountRawModel
+  | UnregdacRawModel
+  | UnregrefRawModel;
+
 export type IndexWorldsActionMongoModel = {
   _id?: MongoDB.ObjectId;
   block_timestamp?: Date;
@@ -45,5 +59,17 @@ export type IndexWorldsActionMongoModel = {
     name: string;
     data: DataDocumentType;
   };
+};
+
+export type IndexWorldsActionRawModel = {
+  account: string;
+  name: string;
+  block_timestamp: Date;
+  block_number: string;
+  global_sequence: string;
+  recv_sequence: string;
+  transaction_id: string;
+  data: DataRawType;
+  [key: string]: unknown;
 };
 

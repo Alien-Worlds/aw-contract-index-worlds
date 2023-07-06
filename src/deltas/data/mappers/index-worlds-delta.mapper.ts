@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 06 Jul 2023 10:13:18 GMT
+ * Last updated on: Thu, 06 Jul 2023 15:42:04 GMT
  */
 
 
@@ -12,12 +12,13 @@ import {
 import { ContractDelta, MapperImpl, parseToBigInt } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { DataEntityType } from '../../domain/entities/index-worlds-delta';
-import { IndexWorldsDeltaMongoModel } from '../dtos';
+import { IndexWorldsDeltaMongoModel, IndexWorldsDeltaRawModel } from '../dtos';
 import { IndexWorldsTableName } from '../../domain/enums';
-import { DacglobalsMongoMapper } from "./dacglobals.mapper";
-import { DacsMongoMapper } from "./dacs.mapper";
-import { NftcacheMongoMapper } from "./nftcache.mapper";
+import { DacglobalsMongoMapper, DacglobalsRawMapper } from "./dacglobals.mapper";
+import { DacsMongoMapper, DacsRawMapper } from "./dacs.mapper";
+import { NftcacheMongoMapper, NftcacheRawMapper } from "./nftcache.mapper";
 
+// Mongo Mapper
 export class IndexWorldsDeltaMongoMapper
   extends MapperImpl<ContractDelta<DataEntityType, IndexWorldsDeltaMongoModel>, IndexWorldsDeltaMongoModel>
 {
@@ -27,13 +28,19 @@ export class IndexWorldsDeltaMongoMapper
     let entityData;
     switch (entity.table) {
       case IndexWorldsTableName.Dacglobals:
-        entityData = new DacglobalsMongoMapper().fromEntity(entity.delta as Dacglobals);
+        entityData = new DacglobalsMongoMapper().fromEntity(
+          entity.data as Dacglobals
+        );
         break;
       case IndexWorldsTableName.Dacs:
-        entityData = new DacsMongoMapper().fromEntity(entity.delta as Dacs);
+        entityData = new DacsMongoMapper().fromEntity(
+          entity.data as Dacs
+        );
         break;
       case IndexWorldsTableName.Nftcache:
-        entityData = new NftcacheMongoMapper().fromEntity(entity.delta as Nftcache);
+        entityData = new NftcacheMongoMapper().fromEntity(
+          entity.data as Nftcache
+        );
         break;
     }
 
@@ -44,7 +51,6 @@ export class IndexWorldsDeltaMongoMapper
       code: entity.code,
       scope: entity.scope,
       table: entity.table,
-      data_hash: entity.deltaHash,
       data: entityData,
       payer: entity.payer,
       primary_key: new MongoDB.Long(entity.primaryKey),
@@ -74,7 +80,6 @@ export class IndexWorldsDeltaMongoMapper
       code,
       scope,
       table,
-      data_hash,
       payer,
       primary_key,
       present,
@@ -87,7 +92,59 @@ export class IndexWorldsDeltaMongoMapper
       code,
       scope,
       table,
-      data_hash,
+      data,
+      payer,
+      parseToBigInt(primary_key),
+      present,
+      block_timestamp
+    );
+  }
+}
+
+// Processor Task Mapper
+export class IndexWorldsDeltaProcessorTaskMapper extends MapperImpl<
+  ContractDelta<DataEntityType, IndexWorldsDeltaRawModel>, 
+    IndexWorldsDeltaRawModel
+> {
+  public fromEntity(
+    entity: ContractDelta<DataEntityType, IndexWorldsDeltaRawModel>
+  ): IndexWorldsDeltaRawModel {
+    throw new Error('method not implemented');
+  }
+
+  public toEntity(
+    rawModel: IndexWorldsDeltaRawModel
+  ): ContractDelta<DataEntityType, IndexWorldsDeltaRawModel> {
+    let data;
+    switch (rawModel.table) {
+      case IndexWorldsTableName.Dacglobals:
+        data = new DacglobalsRawMapper().toEntity(rawModel.data);
+        break;
+      case IndexWorldsTableName.Dacs:
+        data = new DacsRawMapper().toEntity(rawModel.data);
+        break;
+      case IndexWorldsTableName.Nftcache:
+        data = new NftcacheRawMapper().toEntity(rawModel.data);
+        break;
+    }
+
+    const {
+      block_number,
+      code,
+      scope,
+      table,
+      payer,
+      primary_key,
+      present,
+      block_timestamp,
+    } = rawModel;
+
+    return new ContractDelta<DataEntityType, IndexWorldsDeltaRawModel>(
+      '',
+      parseToBigInt(block_number),
+      code,
+      scope,
+      table,
       data,
       payer,
       parseToBigInt(primary_key),
