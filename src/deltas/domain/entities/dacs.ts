@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 04 Jul 2023 13:56:09 GMT
+ * Last updated on: Thu, 06 Jul 2023 10:13:18 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";

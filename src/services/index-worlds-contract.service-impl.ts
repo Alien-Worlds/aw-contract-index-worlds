@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 04 Jul 2023 13:56:09 GMT
+ * Last updated on: Thu, 06 Jul 2023 10:13:18 GMT
  */
 
 import { 
@@ -47,14 +47,18 @@ export class IndexWorldsContractServiceImpl
   public async fetchDacglobals (
     options?: GetTableRowsOptions
   ): Promise<Result<DacglobalsRawModel[], Error>> {
-    return await this.getAll<DacglobalsRawModel>('data', {
+    const table_key = 'data';
+    const tableRowOptions = {
       ...options,
       code: 'index.worlds',
       table: 'dacglobals',
-      table_key: 'data',
-    });
-  }
+      table_key,
+    };
 
+    return options?.limit > 0
+      ? await this.getMany<DacglobalsRawModel>(tableRowOptions)
+      : await this.getAll<DacglobalsRawModel>(table_key, tableRowOptions);
+  }
   /**
    * A EosSmartContractServiceImpl for the dacs table.
    * 
@@ -64,14 +68,18 @@ export class IndexWorldsContractServiceImpl
   public async fetchDacs (
     options?: GetTableRowsOptions
   ): Promise<Result<DacsRawModel[], Error>> {
-    return await this.getAll<DacsRawModel>('owner', {
+    const table_key = 'owner';
+    const tableRowOptions = {
       ...options,
       code: 'index.worlds',
       table: 'dacs',
-      table_key: 'owner',
-    });
-  }
+      table_key,
+    };
 
+    return options?.limit > 0
+      ? await this.getMany<DacsRawModel>(tableRowOptions)
+      : await this.getAll<DacsRawModel>(table_key, tableRowOptions);
+  }
   /**
    * A EosSmartContractServiceImpl for the nftcache table.
    * 
@@ -81,12 +89,16 @@ export class IndexWorldsContractServiceImpl
   public async fetchNftcache (
     options?: GetTableRowsOptions
   ): Promise<Result<NftcacheRawModel[], Error>> {
-    return await this.getAll<NftcacheRawModel>('nft_id', {
+    const table_key = 'nft_id';
+    const tableRowOptions = {
       ...options,
       code: 'index.worlds',
       table: 'nftcache',
-      table_key: 'nft_id',
-    });
-  }
+      table_key,
+    };
 
+    return options?.limit > 0
+      ? await this.getMany<NftcacheRawModel>(tableRowOptions)
+      : await this.getAll<NftcacheRawModel>(table_key, tableRowOptions);
+  }
 }
