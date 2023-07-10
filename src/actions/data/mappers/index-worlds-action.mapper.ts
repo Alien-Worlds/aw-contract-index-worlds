@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 06 Jul 2023 15:42:04 GMT
+ * Last updated on: Mon, 10 Jul 2023 09:37:43 GMT
  */
 
 
@@ -70,10 +70,10 @@ import { IndexWorldsActionName } from '../../domain/enums';
 
 // Mongo Mapper
 export class IndexWorldsActionMongoMapper
-  extends MapperImpl<ContractAction<DataEntityType, IndexWorldsActionMongoModel>, IndexWorldsActionMongoModel>
+  extends MapperImpl<ContractAction<DataEntityType>, IndexWorldsActionMongoModel>
 {
   public fromEntity(
-    entity: ContractAction<DataEntityType, IndexWorldsActionMongoModel>
+    entity: ContractAction<DataEntityType>
   ): IndexWorldsActionMongoModel {
     let entityData;
     switch (entity.name) {
@@ -156,7 +156,7 @@ export class IndexWorldsActionMongoMapper
 
   public toEntity(
     mongoModel: IndexWorldsActionMongoModel
-  ): ContractAction<DataEntityType, IndexWorldsActionMongoModel> {
+  ): ContractAction<DataEntityType> {
     let data;
     switch (mongoModel.action.name) {
       case IndexWorldsActionName.Hdlegovchg:
@@ -231,7 +231,7 @@ export class IndexWorldsActionMongoMapper
       action,
     } = mongoModel;
 
-    return new ContractAction<DataEntityType, IndexWorldsActionMongoModel>(
+    return new ContractAction<DataEntityType>(
       _id.toString(),
       block_timestamp,
       parseToBigInt(block_number),

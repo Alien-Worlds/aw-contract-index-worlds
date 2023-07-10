@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 06 Jul 2023 15:42:04 GMT
+ * Last updated on: Mon, 10 Jul 2023 09:37:43 GMT
  */
 
 
@@ -20,10 +20,10 @@ import { NftcacheMongoMapper, NftcacheRawMapper } from "./nftcache.mapper";
 
 // Mongo Mapper
 export class IndexWorldsDeltaMongoMapper
-  extends MapperImpl<ContractDelta<DataEntityType, IndexWorldsDeltaMongoModel>, IndexWorldsDeltaMongoModel>
+  extends MapperImpl<ContractDelta<DataEntityType>, IndexWorldsDeltaMongoModel>
 {
   public fromEntity(
-    entity: ContractDelta<DataEntityType, IndexWorldsDeltaMongoModel>
+    entity: ContractDelta<DataEntityType>
   ): IndexWorldsDeltaMongoModel {
     let entityData;
     switch (entity.table) {
@@ -60,7 +60,7 @@ export class IndexWorldsDeltaMongoMapper
 
   public toEntity(
     mongoModel: IndexWorldsDeltaMongoModel
-  ): ContractDelta<DataEntityType, IndexWorldsDeltaMongoModel> {
+  ): ContractDelta<DataEntityType> {
     let data;
     switch (mongoModel.table) {
       case IndexWorldsTableName.Dacglobals:
@@ -86,7 +86,7 @@ export class IndexWorldsDeltaMongoMapper
       block_timestamp,
     } = mongoModel;
 
-    return new ContractDelta<DataEntityType, IndexWorldsDeltaMongoModel>(
+    return new ContractDelta<DataEntityType>(
       _id.toString(),
       parseToBigInt(block_number),
       code,
