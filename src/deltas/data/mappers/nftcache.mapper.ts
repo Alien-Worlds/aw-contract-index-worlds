@@ -1,12 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:43 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
-import {
-  MapperImpl,
-  parseToBigInt,
-} from '@alien-worlds/api-core';
+import { MapperImpl } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { Nftcache  } from "../../domain/entities";
 import { NftcacheMongoModel, NftcacheRawModel  } from "../dtos/nftcache.dto";
@@ -20,18 +17,17 @@ export class NftcacheMongoMapper
 
     this.mappingFromEntity.set('nftId', { 
       key: 'nft_id', 
-      mapper: (value: bigint) => MongoDB.Long.fromBigInt(value),
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('schemaName', { 
       key: 'schema_name', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('value', { 
       key: 'value', 
-      mapper: (value: bigint) => MongoDB.Long.fromBigInt(value),
+      mapper: (value: number) => value,
     });
 
   }
@@ -41,14 +37,14 @@ export class NftcacheMongoMapper
       nft_id,
       schema_name,
       value,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Nftcache.create(
-        nft_id.toBigInt() ?? 0n,
-        schema_name ?? '',
-        value.toBigInt() ?? 0n,
+      nft_id || 0,
+      schema_name || '',
+      value || 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -73,9 +69,9 @@ export class NftcacheRawMapper
     } = rawModel;
 
     return Nftcache.create(
-      parseToBigInt(nft_id ?? 0n),
-        schema_name ?? '',
-      parseToBigInt(value ?? 0n),
+      nft_id || 0,
+      schema_name || '',
+      value || 0,
       undefined,
       rest
     );

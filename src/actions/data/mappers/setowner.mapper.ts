@@ -1,12 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:42 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
-import {
-  MapperImpl,
-  parseToBigInt,
-} from '@alien-worlds/api-core';
+import { MapperImpl } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { Setowner  } from "../../domain/entities";
 import { SetownerMongoModel, SetownerRawModel  } from "../dtos/setowner.dto";
@@ -20,14 +17,12 @@ export class SetownerMongoMapper
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('newOwner', { 
       key: 'new_owner', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
   }
@@ -36,13 +31,13 @@ export class SetownerMongoMapper
     const { 
       dac_id,
       new_owner,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Setowner.create(
-        dac_id ?? '',
-        new_owner ?? '',
+      dac_id || '',
+      new_owner || '',
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -66,8 +61,8 @@ export class SetownerRawMapper
     } = rawModel;
 
     return Setowner.create(
-        dac_id ?? '',
-        new_owner ?? '',
+      dac_id || '',
+      new_owner || '',
       undefined,
       rest
     );

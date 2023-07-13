@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:43 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
 import { 
@@ -47,7 +47,7 @@ export class IndexWorldsContractServiceImpl
   public async fetchDacglobals (
     options?: GetTableRowsOptions
   ): Promise<Result<DacglobalsRawModel[], Error>> {
-    const table_key = 'data';
+    const table_key = '';
     const tableRowOptions = {
       ...options,
       code: 'index.worlds',
@@ -68,7 +68,7 @@ export class IndexWorldsContractServiceImpl
   public async fetchDacs (
     options?: GetTableRowsOptions
   ): Promise<Result<DacsRawModel[], Error>> {
-    const table_key = 'owner';
+    const table_key = 'dac_id';
     const tableRowOptions = {
       ...options,
       code: 'index.worlds',

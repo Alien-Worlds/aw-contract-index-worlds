@@ -1,12 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:42 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
-import {
-  MapperImpl,
-  parseToBigInt,
-} from '@alien-worlds/api-core';
+import { MapperImpl } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { Regref  } from "../../domain/entities";
 import { RegrefMongoModel, RegrefRawModel  } from "../dtos/regref.dto";
@@ -20,20 +17,17 @@ export class RegrefMongoMapper
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('value', { 
       key: 'value', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('type', { 
       key: 'type', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
   }
@@ -43,14 +37,14 @@ export class RegrefMongoMapper
       dac_id,
       value,
       type,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Regref.create(
-        dac_id ?? '',
-        value ?? '',
-        type ?? 0,
+      dac_id || '',
+      value || '',
+      type || 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -75,9 +69,9 @@ export class RegrefRawMapper
     } = rawModel;
 
     return Regref.create(
-        dac_id ?? '',
-        value ?? '',
-        type ?? 0,
+      dac_id || '',
+      value || '',
+      type || 0,
       undefined,
       rest
     );

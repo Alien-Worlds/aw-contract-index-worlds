@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:43 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';
@@ -14,9 +14,9 @@ import { MongoDB } from '@alien-worlds/storage-mongodb';
  */
 export type NftcacheMongoModel = {
   _id?: MongoDB.ObjectId;
-  nft_id?: MongoDB.Long;
+  nft_id?: number;
   schema_name?: string;
-  value?: MongoDB.Long;
+  value?: number;
   [key: string]: unknown;
 };
 
@@ -28,9 +28,9 @@ export type NftcacheMongoModel = {
  * @typedef {Object} NftcacheRawModel
  */
 export type NftcacheRawModel = {
-  nft_id?: bigint;
+  nft_id?: number;
   schema_name?: string;
-  value?: bigint;
+  value?: number;
   [key: string]: unknown;
 };
 

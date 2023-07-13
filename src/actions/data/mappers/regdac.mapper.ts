@@ -1,16 +1,13 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:42 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
-import {
-  MapperImpl,
-  parseToBigInt,
-} from '@alien-worlds/api-core';
+import { MapperImpl } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
-import { ExtendedSymbol, ExtendedSymbolMongoMapper, ExtendedSymbolRawMapper } from '@alien-worlds/eosio-contract-types';
-import { Regdac,  PairUint8String,  PairUint8Name  } from "../../domain/entities";
-import { RegdacMongoModel, RegdacRawModel,  PairUint8StringMongoModel, PairUint8StringRawModel,  PairUint8NameMongoModel, PairUint8NameRawModel  } from "../dtos/regdac.dto";
+import { ExtendedSymbol, ExtendedSymbolMongoMapper, ExtendedSymbolRawMapper, Pair, PairMongoMapper, PairRawMapper } from '@alien-worlds/eosio-contract-types';
+import { Regdac  } from "../../domain/entities";
+import { RegdacMongoModel, RegdacRawModel  } from "../dtos/regdac.dto";
 
 // Mongo Mappers
 export class RegdacMongoMapper
@@ -21,38 +18,32 @@ export class RegdacMongoMapper
 
     this.mappingFromEntity.set('owner', { 
       key: 'owner', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('dacSymbol', { 
       key: 'dac_symbol', 
-      mapper: (value: ExtendedSymbol) => 
-           new ExtendedSymbolMongoMapper().fromEntity(value)
+      mapper: (value: ExtendedSymbol) => new ExtendedSymbolMongoMapper().fromEntity(value),
     });
 
     this.mappingFromEntity.set('title', { 
       key: 'title', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('refs', { 
       key: 'refs', 
-      mapper: (value: PairUint8String[]) => 
-        value.map(new PairUint8StringMongoMapper().fromEntity),
+      mapper: (values: Pair[]) => values.map(value => new PairMongoMapper().fromEntity(value)),
     });
 
     this.mappingFromEntity.set('accounts', { 
       key: 'accounts', 
-      mapper: (value: PairUint8Name[]) => 
-        value.map(new PairUint8NameMongoMapper().fromEntity),
+      mapper: (values: Pair[]) => values.map(value => new PairMongoMapper().fromEntity(value)),
     });
 
   }
@@ -65,95 +56,17 @@ export class RegdacMongoMapper
       title,
       refs,
       accounts,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Regdac.create(
-        owner ?? '',
-        dac_id ?? '',
-        dac_symbol 
-          ? new ExtendedSymbolMongoMapper().toEntity(dac_symbol)
-          : ExtendedSymbol.getDefault(),
-        title ?? '',
-        refs?.map(new PairUint8StringMongoMapper().toEntity) ?? []
-,
-        accounts?.map(new PairUint8NameMongoMapper().toEntity) ?? []
-,
-      _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
-      rest
-    );
-  }
-}
-
-export class PairUint8StringMongoMapper
-  extends MapperImpl<PairUint8String, PairUint8StringMongoModel>
-{
-  constructor() {
-    super();
-
-    this.mappingFromEntity.set('key', { 
-      key: 'key', 
-      mapper: (value: number) => 
-        value,
-    });
-
-    this.mappingFromEntity.set('value', { 
-      key: 'value', 
-      mapper: (value: string) => 
-        value,
-    });
-
-  }
-
-  public toEntity(mongoModel: PairUint8StringMongoModel): PairUint8String {
-    const { 
-      key,
-      value,
-      _id, 
-      ...rest
-    } = mongoModel;
-
-    return PairUint8String.create(
-        key ?? 0,
-        value ?? '',
-      _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
-      rest
-    );
-  }
-}
-
-export class PairUint8NameMongoMapper
-  extends MapperImpl<PairUint8Name, PairUint8NameMongoModel>
-{
-  constructor() {
-    super();
-
-    this.mappingFromEntity.set('key', { 
-      key: 'key', 
-      mapper: (value: number) => 
-        value,
-    });
-
-    this.mappingFromEntity.set('value', { 
-      key: 'value', 
-      mapper: (value: string) => 
-        value,
-    });
-
-  }
-
-  public toEntity(mongoModel: PairUint8NameMongoModel): PairUint8Name {
-    const { 
-      key,
-      value,
-      _id, 
-      ...rest
-    } = mongoModel;
-
-    return PairUint8Name.create(
-        key ?? 0,
-        value ?? '',
+      owner || '',
+      dac_id || '',
+      new ExtendedSymbolMongoMapper().toEntity(dac_symbol),
+      title || '',
+      refs?.map(value => new PairMongoMapper().toEntity(value)) || [],
+      accounts?.map(value => new PairMongoMapper().toEntity(value)) || [],
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -181,62 +94,12 @@ export class RegdacRawMapper
     } = rawModel;
 
     return Regdac.create(
-        owner ?? '',
-        dac_id ?? '',
-        dac_symbol 
-          ? new ExtendedSymbolRawMapper().toEntity(dac_symbol)
-          : ExtendedSymbol.getDefault(),
-        title ?? '',
-        refs?.map(new PairUint8StringRawMapper().toEntity) ?? []
-,
-        accounts?.map(new PairUint8NameRawMapper().toEntity) ?? []
-,
-      undefined,
-      rest
-    );
-  }
-}
-
-export class PairUint8StringRawMapper
-  extends MapperImpl<PairUint8String, PairUint8StringRawModel>
-{
-  public fromEntity(entity: PairUint8String): PairUint8StringRawModel {
-    throw new Error('Method not implemented');
-  }
-
-  public toEntity(rawModel: PairUint8StringRawModel): PairUint8String {
-    const { 
-      key,
-      value,
-      ...rest
-    } = rawModel;
-
-    return PairUint8String.create(
-        key ?? 0,
-        value ?? '',
-      undefined,
-      rest
-    );
-  }
-}
-
-export class PairUint8NameRawMapper
-  extends MapperImpl<PairUint8Name, PairUint8NameRawModel>
-{
-  public fromEntity(entity: PairUint8Name): PairUint8NameRawModel {
-    throw new Error('Method not implemented');
-  }
-
-  public toEntity(rawModel: PairUint8NameRawModel): PairUint8Name {
-    const { 
-      key,
-      value,
-      ...rest
-    } = rawModel;
-
-    return PairUint8Name.create(
-        key ?? 0,
-        value ?? '',
+      owner || '',
+      dac_id || '',
+      new ExtendedSymbolRawMapper().toEntity(dac_symbol),
+      title || '',
+      refs?.map(value => new PairRawMapper().toEntity(value)) || [],
+      accounts?.map(value => new PairRawMapper().toEntity(value)) || [],
       undefined,
       rest
     );

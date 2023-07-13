@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:43 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -47,6 +47,8 @@ export class Settitle implements Entity {
    *
    * @static
    * @public
+   * @param string dacId
+   * @param string title
    * @returns `Settitle` An instance of the `Settitle` class.
    */
   public static create(
@@ -58,7 +60,7 @@ export class Settitle implements Entity {
     const entity = new Settitle(
       dacId,
       title,
-      id
+      id,
     );
     entity.rest = rest;
 

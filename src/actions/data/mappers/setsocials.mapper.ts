@@ -1,12 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:42 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
-import {
-  MapperImpl,
-  parseToBigInt,
-} from '@alien-worlds/api-core';
+import { MapperImpl } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { Setsocials  } from "../../domain/entities";
 import { SetsocialsMongoModel, SetsocialsRawModel  } from "../dtos/setsocials.dto";
@@ -20,14 +17,12 @@ export class SetsocialsMongoMapper
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('active', { 
       key: 'active', 
-      mapper: (value: boolean) => 
-        value,
+      mapper: (value: boolean) => value,
     });
 
   }
@@ -36,13 +31,13 @@ export class SetsocialsMongoMapper
     const { 
       dac_id,
       active,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Setsocials.create(
-        dac_id ?? '',
-        active ?? false,
+      dac_id || '',
+      active || false,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -66,8 +61,8 @@ export class SetsocialsRawMapper
     } = rawModel;
 
     return Setsocials.create(
-        dac_id ?? '',
-        active ?? false,
+      dac_id || '',
+      active || false,
       undefined,
       rest
     );

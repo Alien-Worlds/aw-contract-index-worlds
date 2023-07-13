@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:43 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -16,16 +16,16 @@ export class Nftcache implements Entity {
    *
    * @public
    * @constructor
-   * @param bigint nftId
+   * @param number nftId
    * @param string schemaName
-   * @param bigint value
+   * @param number value
    * @param string [id]
    * @returns `Nftcache` - An instance of the `Nftcache` class.
    */
   public constructor(
-    public nftId: bigint,
+    public nftId: number,
     public schemaName: string,
-    public value: bigint,
+    public value: number,
     public id?: string,
   ) {}
 
@@ -50,12 +50,15 @@ export class Nftcache implements Entity {
    *
    * @static
    * @public
+   * @param number nftId
+   * @param string schemaName
+   * @param number value
    * @returns `Nftcache` An instance of the `Nftcache` class.
    */
   public static create(
-    nftId: bigint,
+    nftId: number,
     schemaName: string,
-    value: bigint,
+    value: number,
     id?: string,
     rest?: UnknownObject
   ): Nftcache {
@@ -63,7 +66,7 @@ export class Nftcache implements Entity {
       nftId,
       schemaName,
       value,
-      id
+      id,
     );
     entity.rest = rest;
 
@@ -72,9 +75,9 @@ export class Nftcache implements Entity {
 
   public static getDefault(): Nftcache {
     return new Nftcache(
-      0n,
+      0,
       '',
-      0n,
+      0,
     );
   }
 }

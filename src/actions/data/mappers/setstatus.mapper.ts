@@ -1,12 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:42 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
-import {
-  MapperImpl,
-  parseToBigInt,
-} from '@alien-worlds/api-core';
+import { MapperImpl } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { Setstatus  } from "../../domain/entities";
 import { SetstatusMongoModel, SetstatusRawModel  } from "../dtos/setstatus.dto";
@@ -20,14 +17,12 @@ export class SetstatusMongoMapper
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('value', { 
       key: 'value', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
   }
@@ -36,13 +31,13 @@ export class SetstatusMongoMapper
     const { 
       dac_id,
       value,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Setstatus.create(
-        dac_id ?? '',
-        value ?? 0,
+      dac_id || '',
+      value || 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -66,8 +61,8 @@ export class SetstatusRawMapper
     } = rawModel;
 
     return Setstatus.create(
-        dac_id ?? '',
-        value ?? 0,
+      dac_id || '',
+      value || 0,
       undefined,
       rest
     );

@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:43 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -47,6 +47,8 @@ export class Setstatus implements Entity {
    *
    * @static
    * @public
+   * @param string dacId
+   * @param number value
    * @returns `Setstatus` An instance of the `Setstatus` class.
    */
   public static create(
@@ -58,7 +60,7 @@ export class Setstatus implements Entity {
     const entity = new Setstatus(
       dacId,
       value,
-      id
+      id,
     );
     entity.rest = rest;
 

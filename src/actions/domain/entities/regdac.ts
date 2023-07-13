@@ -1,10 +1,10 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:43 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
-import { ExtendedSymbol } from '@alien-worlds/eosio-contract-types';
+import { ExtendedSymbol, Pair } from '@alien-worlds/eosio-contract-types';
 
 /**
  * Represents a `Regdac` object.
@@ -21,8 +21,8 @@ export class Regdac implements Entity {
    * @param string dacId
    * @param ExtendedSymbol dacSymbol
    * @param string title
-   * @param PairUint8String[] refs
-   * @param PairUint8Name[] accounts
+   * @param Pair[] refs
+   * @param Pair[] accounts
    * @param string [id]
    * @returns `Regdac` - An instance of the `Regdac` class.
    */
@@ -31,8 +31,8 @@ export class Regdac implements Entity {
     public dacId: string,
     public dacSymbol: ExtendedSymbol,
     public title: string,
-    public refs: PairUint8String[],
-    public accounts: PairUint8Name[],
+    public refs: Pair[],
+    public accounts: Pair[],
     public id?: string,
   ) {}
 
@@ -60,6 +60,12 @@ export class Regdac implements Entity {
    *
    * @static
    * @public
+   * @param string owner
+   * @param string dacId
+   * @param ExtendedSymbol dacSymbol
+   * @param string title
+   * @param Pair[] refs
+   * @param Pair[] accounts
    * @returns `Regdac` An instance of the `Regdac` class.
    */
   public static create(
@@ -67,8 +73,8 @@ export class Regdac implements Entity {
     dacId: string,
     dacSymbol: ExtendedSymbol,
     title: string,
-    refs: PairUint8String[],
-    accounts: PairUint8Name[],
+    refs: Pair[],
+    accounts: Pair[],
     id?: string,
     rest?: UnknownObject
   ): Regdac {
@@ -79,7 +85,7 @@ export class Regdac implements Entity {
       title,
       refs,
       accounts,
-      id
+      id,
     );
     entity.rest = rest;
 
@@ -96,142 +102,6 @@ export class Regdac implements Entity {
 ,
         []
 ,
-    );
-  }
-}
-
-/**
- * Represents a `PairUint8String` object.
- *
- * @class
- */
-export class PairUint8String implements Entity {
-  /**
-   * Constructs a new instance of the `PairUint8String` class.
-   *
-   * @public
-   * @constructor
-   * @param number key
-   * @param string value
-   * @param string [id]
-   * @returns `PairUint8String` - An instance of the `PairUint8String` class.
-   */
-  public constructor(
-    public key: number,
-    public value: string,
-    public id?: string,
-  ) {}
-
-  public rest?: UnknownObject;
-
-  /**
-   * Converts the current instance of the `PairUint8String` class to a JSON object.
-   * 
-   * @public
-   * @returns {UnknownObject} The JSON representation of the instance.
-   */
-  public toJSON(): UnknownObject {
-    return {
-      key: this.key,
-      value: this.value,
-    };
-  }
-
-  /**
-   * Creates an instance of the `PairUint8String` class.
-   *
-   * @static
-   * @public
-   * @returns `PairUint8String` An instance of the `PairUint8String` class.
-   */
-  public static create(
-    key: number,
-    value: string,
-    id?: string,
-    rest?: UnknownObject
-  ): PairUint8String {
-    const entity = new PairUint8String(
-      key,
-      value,
-      id
-    );
-    entity.rest = rest;
-
-    return entity;
-  }
-
-  public static getDefault(): PairUint8String {
-    return new PairUint8String(
-      0,
-      '',
-    );
-  }
-}
-
-/**
- * Represents a `PairUint8Name` object.
- *
- * @class
- */
-export class PairUint8Name implements Entity {
-  /**
-   * Constructs a new instance of the `PairUint8Name` class.
-   *
-   * @public
-   * @constructor
-   * @param number key
-   * @param string value
-   * @param string [id]
-   * @returns `PairUint8Name` - An instance of the `PairUint8Name` class.
-   */
-  public constructor(
-    public key: number,
-    public value: string,
-    public id?: string,
-  ) {}
-
-  public rest?: UnknownObject;
-
-  /**
-   * Converts the current instance of the `PairUint8Name` class to a JSON object.
-   * 
-   * @public
-   * @returns {UnknownObject} The JSON representation of the instance.
-   */
-  public toJSON(): UnknownObject {
-    return {
-      key: this.key,
-      value: this.value,
-    };
-  }
-
-  /**
-   * Creates an instance of the `PairUint8Name` class.
-   *
-   * @static
-   * @public
-   * @returns `PairUint8Name` An instance of the `PairUint8Name` class.
-   */
-  public static create(
-    key: number,
-    value: string,
-    id?: string,
-    rest?: UnknownObject
-  ): PairUint8Name {
-    const entity = new PairUint8Name(
-      key,
-      value,
-      id
-    );
-    entity.rest = rest;
-
-    return entity;
-  }
-
-  public static getDefault(): PairUint8Name {
-    return new PairUint8Name(
-      0,
-      '',
     );
   }
 }

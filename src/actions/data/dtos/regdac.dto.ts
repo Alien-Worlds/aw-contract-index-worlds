@@ -1,10 +1,10 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 09:37:42 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';
-import { ExtendedSymbolMongoModel, ExtendedSymbolRawModel } from '@alien-worlds/eosio-contract-types';
+import { ExtendedSymbolMongoModel, Pair, ExtendedSymbolRawModel } from '@alien-worlds/eosio-contract-types';
 
 /**
  * MongoDB Model(s) - Types representing data from MongoDB
@@ -19,28 +19,8 @@ export type RegdacMongoModel = {
   dac_id?: string;
   dac_symbol?: ExtendedSymbolMongoModel;
   title?: string;
-  refs?: PairUint8StringMongoModel[];
-  accounts?: PairUint8NameMongoModel[];
-  [key: string]: unknown;
-};
-
-/**
- * @typedef {Object} PairUint8StringMongoModel
- */
-export type PairUint8StringMongoModel = {
-  _id?: MongoDB.ObjectId;
-  key?: number;
-  value?: string;
-  [key: string]: unknown;
-};
-
-/**
- * @typedef {Object} PairUint8NameMongoModel
- */
-export type PairUint8NameMongoModel = {
-  _id?: MongoDB.ObjectId;
-  key?: number;
-  value?: string;
+  refs?: Pair[];
+  accounts?: Pair[];
   [key: string]: unknown;
 };
 
@@ -56,26 +36,8 @@ export type RegdacRawModel = {
   dac_id?: string;
   dac_symbol?: ExtendedSymbolRawModel;
   title?: string;
-  refs?: PairUint8StringRawModel[];
-  accounts?: PairUint8NameRawModel[];
-  [key: string]: unknown;
-};
-
-/**
- * @typedef {Object} PairUint8StringRawModel
- */
-export type PairUint8StringRawModel = {
-  key?: number;
-  value?: string;
-  [key: string]: unknown;
-};
-
-/**
- * @typedef {Object} PairUint8NameRawModel
- */
-export type PairUint8NameRawModel = {
-  key?: number;
-  value?: string;
+  refs?: Pair[];
+  accounts?: Pair[];
   [key: string]: unknown;
 };
 
