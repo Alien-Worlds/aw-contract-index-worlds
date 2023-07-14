@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:12:12 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:52:08 GMT
  */
 
 
@@ -10,7 +10,7 @@ import {
   Nftcache,
 } from '../../domain/entities';
 import { ContractDelta, MapperImpl, parseToBigInt } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { DataEntityType } from '../../domain/entities/index-worlds-delta';
 import { IndexWorldsDeltaMongoModel, IndexWorldsDeltaRawModel } from '../dtos';
 import { IndexWorldsTableName } from '../../domain/enums';
@@ -20,7 +20,7 @@ import { NftcacheMongoMapper, NftcacheRawMapper } from "./nftcache.mapper";
 
 // Mongo Mapper
 export class IndexWorldsDeltaMongoMapper
-  extends MapperImpl<ContractDelta<DataEntityType>, IndexWorldsDeltaMongoModel>
+  extends MongoMapper<ContractDelta<DataEntityType>, IndexWorldsDeltaMongoModel>
 {
   public fromEntity(
     entity: ContractDelta<DataEntityType>

@@ -1,16 +1,16 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:12:11 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:52:08 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { Unregdac  } from "../../domain/entities";
 import { UnregdacMongoModel, UnregdacRawModel  } from "../dtos/unregdac.dto";
 
 // Mongo Mappers
 export class UnregdacMongoMapper
-  extends MapperImpl<Unregdac, UnregdacMongoModel>
+  extends MongoMapper<Unregdac, UnregdacMongoModel>
 {
   constructor() {
     super();

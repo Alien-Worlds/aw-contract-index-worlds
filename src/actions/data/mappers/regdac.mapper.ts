@@ -1,17 +1,17 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:12:11 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:52:08 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { ExtendedSymbol, ExtendedSymbolMongoMapper, ExtendedSymbolRawMapper, Pair, PairMongoMapper, PairRawMapper } from '@alien-worlds/eosio-contract-types';
 import { Regdac  } from "../../domain/entities";
 import { RegdacMongoModel, RegdacRawModel  } from "../dtos/regdac.dto";
 
 // Mongo Mappers
 export class RegdacMongoMapper
-  extends MapperImpl<Regdac, RegdacMongoModel>
+  extends MongoMapper<Regdac, RegdacMongoModel>
 {
   constructor() {
     super();

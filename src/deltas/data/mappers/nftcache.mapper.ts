@@ -1,16 +1,16 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:12:11 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:52:08 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { Nftcache  } from "../../domain/entities";
 import { NftcacheMongoModel, NftcacheRawModel  } from "../dtos/nftcache.dto";
 
 // Mongo Mappers
 export class NftcacheMongoMapper
-  extends MapperImpl<Nftcache, NftcacheMongoModel>
+  extends MongoMapper<Nftcache, NftcacheMongoModel>
 {
   constructor() {
     super();

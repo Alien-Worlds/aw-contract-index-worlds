@@ -1,16 +1,16 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:12:11 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:52:08 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { Setsociallnk  } from "../../domain/entities";
 import { SetsociallnkMongoModel, SetsociallnkRawModel  } from "../dtos/setsociallnk.dto";
 
 // Mongo Mappers
 export class SetsociallnkMongoMapper
-  extends MapperImpl<Setsociallnk, SetsociallnkMongoModel>
+  extends MongoMapper<Setsociallnk, SetsociallnkMongoModel>
 {
   constructor() {
     super();

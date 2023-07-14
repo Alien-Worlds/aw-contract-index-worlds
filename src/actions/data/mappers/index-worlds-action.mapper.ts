@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:12:11 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:52:08 GMT
  */
 
 
@@ -36,7 +36,7 @@ import { SettitleMongoMapper, SettitleRawMapper } from "./settitle.mapper";
 import { UnregaccountMongoMapper, UnregaccountRawMapper } from "./unregaccount.mapper";
 import { UnregdacMongoMapper, UnregdacRawMapper } from "./unregdac.mapper";
 import { UnregrefMongoMapper, UnregrefRawMapper } from "./unregref.mapper";
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { DataEntityType } from '../../domain/entities/index-worlds-action';
 import { 
   IndexWorldsActionMongoModel,
@@ -70,7 +70,7 @@ import { IndexWorldsActionName } from '../../domain/enums';
 
 // Mongo Mapper
 export class IndexWorldsActionMongoMapper
-  extends MapperImpl<ContractAction<DataEntityType>, IndexWorldsActionMongoModel>
+  extends MongoMapper<ContractAction<DataEntityType>, IndexWorldsActionMongoModel>
 {
   public fromEntity(
     entity: ContractAction<DataEntityType>
