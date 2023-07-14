@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 13 Jul 2023 08:12:37 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:12:11 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -63,7 +63,7 @@ export class RegdacMongoMapper
     return Regdac.create(
       owner || '',
       dac_id || '',
-      new ExtendedSymbolMongoMapper().toEntity(dac_symbol),
+      dac_symbol ? new ExtendedSymbolMongoMapper().toEntity(dac_symbol) : ExtendedSymbol.getDefault(),
       title || '',
       refs?.map(value => new PairMongoMapper().toEntity(value)) || [],
       accounts?.map(value => new PairMongoMapper().toEntity(value)) || [],
@@ -96,7 +96,7 @@ export class RegdacRawMapper
     return Regdac.create(
       owner || '',
       dac_id || '',
-      new ExtendedSymbolRawMapper().toEntity(dac_symbol),
+      dac_symbol ? new ExtendedSymbolRawMapper().toEntity(dac_symbol) : ExtendedSymbol.getDefault(),
       title || '',
       refs?.map(value => new PairRawMapper().toEntity(value)) || [],
       accounts?.map(value => new PairRawMapper().toEntity(value)) || [],
