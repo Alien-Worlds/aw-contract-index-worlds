@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:52:08 GMT
+ * Last updated on: Fri, 14 Jul 2023 19:23:27 GMT
  */
 
 
@@ -139,8 +139,7 @@ export class IndexWorldsActionMongoMapper
         break;
     }
 
-    return {
-      _id: new MongoDB.ObjectId(entity.id),
+    const model: IndexWorldsActionMongoModel = {
       block_timestamp: entity.blockTimestamp,
       block_number: new MongoDB.Long(entity.blockNumber),
       global_sequence: new MongoDB.Long(entity.globalSequence),
@@ -152,6 +151,12 @@ export class IndexWorldsActionMongoMapper
         data: entityData,
       },
     };
+
+    if (entity.id && MongoDB.ObjectId.isValid(entity.id)) {
+      model._id =  new MongoDB.ObjectId(entity.id);
+    }
+
+    return model;
   }
 
   public toEntity(
