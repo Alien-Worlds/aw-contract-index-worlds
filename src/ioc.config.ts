@@ -1,14 +1,14 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 19:23:27 GMT
+ * Last updated on: Thu, 27 Jul 2023 12:20:50 GMT
  */
 
-import { Container, RepositoryImpl } from '@alien-worlds/api-core';
+import { Container, RepositoryImpl } from '@alien-worlds/aw-core';
 import { 
   MongoConfig,
   MongoQueryBuilders, 
   MongoSource,
-} from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-storage-mongodb';
 
 import { IndexWorldsActionMongoMapper } from './actions/data/mappers';
 import { IndexWorldsActionMongoSource } from './actions/data/data-sources';
@@ -18,7 +18,7 @@ import { IndexWorldsContractServiceImpl } from "./services/index-worlds-contract
 import { IndexWorldsDeltaMongoMapper } from './deltas/data/mappers';
 import { IndexWorldsDeltaMongoSource } from './deltas/data/data-sources';
 import { IndexWorldsDeltaRepository } from './deltas/domain/repositories';
-import { EosRpcSourceImpl } from '@alien-worlds/eos';
+import { AntelopeRpcSourceImpl } from '@alien-worlds/aw-antelope';
 
 export const setupIndexWorldsActionRepository = async (
   mongo: MongoSource | MongoConfig,
@@ -77,12 +77,12 @@ export const setupIndexWorldsDeltaRepository = async (
 };
 
 export const setupIndexWorldsContractService = (
-  eosRpcSourceImpl: EosRpcSourceImpl,
+  antelopeRpcSourceImpl: AntelopeRpcSourceImpl,
   serviceUrl: string,
   container?: Container
 ): IndexWorldsContractService => {
   const service = new IndexWorldsContractServiceImpl(
-    eosRpcSourceImpl,
+    antelopeRpcSourceImpl,
     serviceUrl
   );
 

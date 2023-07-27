@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 19:23:27 GMT
+ * Last updated on: Thu, 27 Jul 2023 12:20:50 GMT
  */
 
 import { 
@@ -9,39 +9,39 @@ import {
   NftcacheRawModel,
 } from '../deltas/data/dtos';
 import { 
-  EosRpcSourceImpl,
-  EosSmartContractServiceImpl,
-} from '@alien-worlds/eos';
+  AntelopeRpcSourceImpl,
+  AntelopeSmartContractServiceImpl,
+} from '@alien-worlds/aw-antelope';
 
 import { IndexWorldsContractService } from './index-worlds-contract.service';
-import { GetTableRowsOptions, Result } from '@alien-worlds/api-core';
+import { GetTableRowsOptions, Result } from '@alien-worlds/aw-core';
 
 /**
  * A service class for interacting with the index.worlds smart contract.
  * 
  * @class IndexWorldsContractServiceImpl
- * @extends {EosSmartContractServiceImpl}
+ * @extends {AntelopeSmartContractServiceImpl}
  * @implements { IndexWorldsContractService}
 */
 export class IndexWorldsContractServiceImpl
-  extends EosSmartContractServiceImpl
+  extends AntelopeSmartContractServiceImpl
   implements IndexWorldsContractService 
 {
   /**
    * Creates an instance of IndexWorldsContractServiceImpl.
    * 
    * @constructor
-   * @param {EosRpcSourceImpl} eosRpcSourceImpl - The EOS RPC source to use for interactions.
+   * @param {AntelopeRpcSourceImpl} antelopeRpcSourceImpl - The Antelope RPC source to use for interactions.
    * @param {string} serviceUrl - Service Url
    */
-  constructor(eosRpcSourceImpl: EosRpcSourceImpl, serviceUrl: string) {
-    super(eosRpcSourceImpl, serviceUrl, 'index.worlds');
+  constructor(antelopeRpcSourceImpl: AntelopeRpcSourceImpl, serviceUrl: string) {
+    super(antelopeRpcSourceImpl, serviceUrl, 'index.worlds');
   }
 
   /**
-   * A EosSmartContractServiceImpl for the dacglobals table.
+   * An AntelopeSmartContractServiceImpl for the dacglobals table.
    * 
-   * @type {EosSmartContractServiceImpl}
+   * @type {AntelopeSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
   public async fetchDacglobals (
@@ -60,9 +60,9 @@ export class IndexWorldsContractServiceImpl
       : await this.getAll<DacglobalsRawModel>(table_key, tableRowOptions);
   }
   /**
-   * A EosSmartContractServiceImpl for the dacs table.
+   * An AntelopeSmartContractServiceImpl for the dacs table.
    * 
-   * @type {EosSmartContractServiceImpl}
+   * @type {AntelopeSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
   public async fetchDacs (
@@ -81,9 +81,9 @@ export class IndexWorldsContractServiceImpl
       : await this.getAll<DacsRawModel>(table_key, tableRowOptions);
   }
   /**
-   * A EosSmartContractServiceImpl for the nftcache table.
+   * An AntelopeSmartContractServiceImpl for the nftcache table.
    * 
-   * @type {EosSmartContractServiceImpl}
+   * @type {AntelopeSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
   public async fetchNftcache (

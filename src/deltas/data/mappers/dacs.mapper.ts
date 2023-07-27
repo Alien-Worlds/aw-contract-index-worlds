@@ -1,11 +1,11 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 19:23:27 GMT
+ * Last updated on: Thu, 27 Jul 2023 12:20:50 GMT
  */
 
-import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
-import { ExtendedSymbol, ExtendedSymbolMongoMapper, ExtendedSymbolRawMapper, Pair, PairMongoMapper, PairRawMapper } from '@alien-worlds/eosio-contract-types';
+import { MapperImpl } from '@alien-worlds/aw-core';
+import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
+import { ExtendedSymbol, ExtendedSymbolMongoMapper, ExtendedSymbolRawMapper, Pair, PairMongoMapper, PairRawMapper } from '@alien-worlds/aw-antelope';
 import { Dacs  } from "../../domain/entities";
 import { DacsMongoModel, DacsRawModel  } from "../dtos/dacs.dto";
 
