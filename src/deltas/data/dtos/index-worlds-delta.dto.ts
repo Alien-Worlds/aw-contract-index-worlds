@@ -36,7 +36,7 @@ export type IndexWorldsDeltaMongoModel = {
 
 export type IndexWorldsDeltaRawModel = {
   block_timestamp: Date;
-  block_num: string;
+  block_number: string;
   code: string;
   scope: string;
   table: string;
