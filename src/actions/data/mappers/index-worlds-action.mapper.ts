@@ -3,8 +3,7 @@
  * Last updated on: Thu, 27 Jul 2023 12:20:50 GMT
  */
 
-
-import { 
+import {
   Hdlegovchg,
   Regaccount,
   Regdac,
@@ -18,27 +17,42 @@ import {
   Unregdac,
   Unregref,
 } from '../../domain/entities';
-import { 
-  ContractAction, 
-  MapperImpl, 
-  parseToBigInt 
+import {
+  ContractAction,
+  MapperImpl,
+  parseToBigInt,
 } from '@alien-worlds/aw-core';
 
-import { HdlegovchgMongoMapper, HdlegovchgRawMapper } from "./hdlegovchg.mapper";
-import { RegaccountMongoMapper, RegaccountRawMapper } from "./regaccount.mapper";
-import { RegdacMongoMapper, RegdacRawMapper } from "./regdac.mapper";
-import { RegrefMongoMapper, RegrefRawMapper } from "./regref.mapper";
-import { SetownerMongoMapper, SetownerRawMapper } from "./setowner.mapper";
-import { SetsociallnkMongoMapper, SetsociallnkRawMapper } from "./setsociallnk.mapper";
-import { SetsocialsMongoMapper, SetsocialsRawMapper } from "./setsocials.mapper";
-import { SetstatusMongoMapper, SetstatusRawMapper } from "./setstatus.mapper";
-import { SettitleMongoMapper, SettitleRawMapper } from "./settitle.mapper";
-import { UnregaccountMongoMapper, UnregaccountRawMapper } from "./unregaccount.mapper";
-import { UnregdacMongoMapper, UnregdacRawMapper } from "./unregdac.mapper";
-import { UnregrefMongoMapper, UnregrefRawMapper } from "./unregref.mapper";
+import {
+  HdlegovchgMongoMapper,
+  HdlegovchgRawMapper,
+} from './hdlegovchg.mapper';
+import {
+  RegaccountMongoMapper,
+  RegaccountRawMapper,
+} from './regaccount.mapper';
+import { RegdacMongoMapper, RegdacRawMapper } from './regdac.mapper';
+import { RegrefMongoMapper, RegrefRawMapper } from './regref.mapper';
+import { SetownerMongoMapper, SetownerRawMapper } from './setowner.mapper';
+import {
+  SetsociallnkMongoMapper,
+  SetsociallnkRawMapper,
+} from './setsociallnk.mapper';
+import {
+  SetsocialsMongoMapper,
+  SetsocialsRawMapper,
+} from './setsocials.mapper';
+import { SetstatusMongoMapper, SetstatusRawMapper } from './setstatus.mapper';
+import { SettitleMongoMapper, SettitleRawMapper } from './settitle.mapper';
+import {
+  UnregaccountMongoMapper,
+  UnregaccountRawMapper,
+} from './unregaccount.mapper';
+import { UnregdacMongoMapper, UnregdacRawMapper } from './unregdac.mapper';
+import { UnregrefMongoMapper, UnregrefRawMapper } from './unregref.mapper';
 import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
 import { DataEntityType } from '../../domain/entities/index-worlds-action';
-import { 
+import {
   IndexWorldsActionMongoModel,
   IndexWorldsActionRawModel,
   HdlegovchgMongoModel,
@@ -69,9 +83,10 @@ import {
 import { IndexWorldsActionName } from '../../domain/enums';
 
 // Mongo Mapper
-export class IndexWorldsActionMongoMapper
-  extends MongoMapper<ContractAction<DataEntityType>, IndexWorldsActionMongoModel>
-{
+export class IndexWorldsActionMongoMapper extends MongoMapper<
+  ContractAction<DataEntityType>,
+  IndexWorldsActionMongoModel
+> {
   public fromEntity(
     entity: ContractAction<DataEntityType>
   ): IndexWorldsActionMongoModel {
@@ -88,14 +103,10 @@ export class IndexWorldsActionMongoMapper
         );
         break;
       case IndexWorldsActionName.Regdac:
-        entityData = new RegdacMongoMapper().fromEntity(
-          entity.data as Regdac
-        );
+        entityData = new RegdacMongoMapper().fromEntity(entity.data as Regdac);
         break;
       case IndexWorldsActionName.Regref:
-        entityData = new RegrefMongoMapper().fromEntity(
-          entity.data as Regref
-        );
+        entityData = new RegrefMongoMapper().fromEntity(entity.data as Regref);
         break;
       case IndexWorldsActionName.Setowner:
         entityData = new SetownerMongoMapper().fromEntity(
@@ -141,9 +152,9 @@ export class IndexWorldsActionMongoMapper
 
     const model: IndexWorldsActionMongoModel = {
       block_timestamp: entity.blockTimestamp,
-      block_number: new MongoDB.Long(entity.blockNumber),
+      block_num: new MongoDB.Long(entity.blockNumber),
       global_sequence: new MongoDB.Long(entity.globalSequence),
-      receiver_sequence: new MongoDB.Long(entity.receiverSequence),
+      recv_sequence: new MongoDB.Long(entity.receiverSequence),
       trx_id: entity.transactionId,
       action: {
         name: entity.name,
@@ -153,7 +164,7 @@ export class IndexWorldsActionMongoMapper
     };
 
     if (entity.id && MongoDB.ObjectId.isValid(entity.id)) {
-      model._id =  new MongoDB.ObjectId(entity.id);
+      model._id = new MongoDB.ObjectId(entity.id);
     }
 
     return model;
@@ -229,9 +240,9 @@ export class IndexWorldsActionMongoMapper
     const {
       _id,
       block_timestamp,
-      block_number,
+      block_num,
       global_sequence,
-      receiver_sequence,
+      recv_sequence,
       trx_id,
       action,
     } = mongoModel;
@@ -239,13 +250,13 @@ export class IndexWorldsActionMongoMapper
     return new ContractAction<DataEntityType>(
       _id.toString(),
       block_timestamp,
-      parseToBigInt(block_number),
+      parseToBigInt(block_num),
       action.account,
       action.name,
       parseToBigInt(global_sequence),
-      parseToBigInt(receiver_sequence),
+      parseToBigInt(recv_sequence),
       trx_id,
-      data,
+      data
     );
   }
 }
@@ -277,14 +288,10 @@ export class IndexWorldsActionProcessorTaskMapper extends MapperImpl<
         );
         break;
       case IndexWorldsActionName.Regdac:
-        data = new RegdacRawMapper().toEntity(
-          rawModel.data as RegdacRawModel
-        );
+        data = new RegdacRawMapper().toEntity(rawModel.data as RegdacRawModel);
         break;
       case IndexWorldsActionName.Regref:
-        data = new RegrefRawMapper().toEntity(
-          rawModel.data as RegrefRawModel
-        );
+        data = new RegrefRawMapper().toEntity(rawModel.data as RegrefRawModel);
         break;
       case IndexWorldsActionName.Setowner:
         data = new SetownerRawMapper().toEntity(
@@ -332,7 +339,7 @@ export class IndexWorldsActionProcessorTaskMapper extends MapperImpl<
       account,
       name,
       block_timestamp,
-      block_number,
+      block_num,
       global_sequence,
       recv_sequence,
       transaction_id,
@@ -341,7 +348,7 @@ export class IndexWorldsActionProcessorTaskMapper extends MapperImpl<
     return new ContractAction<DataEntityType, IndexWorldsActionRawModel>(
       '',
       block_timestamp,
-      parseToBigInt(block_number),
+      parseToBigInt(block_num),
       account,
       name,
       parseToBigInt(global_sequence),
