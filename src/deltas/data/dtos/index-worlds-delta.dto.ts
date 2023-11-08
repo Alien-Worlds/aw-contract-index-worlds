@@ -22,7 +22,7 @@ export type DataRawType =
 
 export type IndexWorldsDeltaMongoModel = {
   _id?: MongoDB.ObjectId;
-  block_num?: MongoDB.Long;
+  block_number?: MongoDB.Long;
   code?: string;
   scope?: string;
   table?: string;

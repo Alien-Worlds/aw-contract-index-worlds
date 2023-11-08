@@ -10,17 +10,11 @@ import { RegaccountMongoModel, RegaccountRawModel } from './regaccount.dto';
 import { RegdacMongoModel, RegdacRawModel } from './regdac.dto';
 import { RegrefMongoModel, RegrefRawModel } from './regref.dto';
 import { SetownerMongoModel, SetownerRawModel } from './setowner.dto';
-import {
-  SetsociallnkMongoModel,
-  SetsociallnkRawModel,
-} from './setsociallnk.dto';
+import { SetsociallnkMongoModel, SetsociallnkRawModel } from './setsociallnk.dto';
 import { SetsocialsMongoModel, SetsocialsRawModel } from './setsocials.dto';
 import { SetstatusMongoModel, SetstatusRawModel } from './setstatus.dto';
 import { SettitleMongoModel, SettitleRawModel } from './settitle.dto';
-import {
-  UnregaccountMongoModel,
-  UnregaccountRawModel,
-} from './unregaccount.dto';
+import { UnregaccountMongoModel, UnregaccountRawModel } from './unregaccount.dto';
 import { UnregdacMongoModel, UnregdacRawModel } from './unregdac.dto';
 import { UnregrefMongoModel, UnregrefRawModel } from './unregref.dto';
 
@@ -55,9 +49,9 @@ export type DataRawType =
 export type IndexWorldsActionMongoModel = {
   _id?: MongoDB.ObjectId;
   block_timestamp?: Date;
-  block_num?: MongoDB.Long;
+  block_number?: MongoDB.Long;
   global_sequence?: MongoDB.Long;
-  recv_sequence?: MongoDB.Long;
+  receiver_sequence?: MongoDB.Long;
   trx_id?: string;
   action_hash?: string;
   action?: {
@@ -78,3 +72,4 @@ export type IndexWorldsActionRawModel = {
   data: DataRawType;
   [key: string]: unknown;
 };
+
